@@ -5,6 +5,7 @@ function validation(fileNames){
         var inputData = arrInput[i];
         if(inputData.type == "file"){
             var fileName = inputData.value;
+            alert("Sorry, " + fileName );
             if (fileName.length > 0) {
                 var blnValid = false;
                 for (var j = 0; j < _acceptableExtension.length; j++) {
