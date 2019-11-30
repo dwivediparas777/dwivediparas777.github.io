@@ -1,12 +1,10 @@
 var _acceptableExtension = [".inkml"];
 function validation(fileNames){
     var arrInput = fileNames.getElementsByTagName("input");
-    alert("hello world");
     for(var i=0; i<arrInput.length; i++){
         var inputData = arrInput[i];
         if(inputData.type == "file"){
             var fileName = inputData.value;
-            alert("Sorry, " + fileName );
             if (fileName.length > 0) {
                 var blnValid = false;
                 for (var j = 0; j < _acceptableExtension.length; j++) {
