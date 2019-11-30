@@ -1,6 +1,7 @@
 var _acceptableExtension = [".inkml"];
 function validation(fileNames){
     var arrInput = fileNames.getElementsByTagName("ink_ml");
+    alert("hello world");
     for(var i=0; i<arrInput.length; i++){
         var inputData = arrInput[i];
         if(inputData.type == "file"){
