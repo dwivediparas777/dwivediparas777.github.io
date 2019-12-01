@@ -6,14 +6,14 @@
         document.getElementById('formInpu').style.display = 'block';
         function yesnoCheck() {
             if (document.getElementById('yesCheck').checked) {
-                document.getElementById('formInpu').style.display = 'none';
-                document.getElementById('formInpu').style.display = 'block';
-                document.getElementById('dropDown').style.display = 'contents';
-            } 
-            else if(document.getElementById('noCheck').checked) {
                 document.getElementById('dropDown').style.display = 'none';
                 document.getElementById('dropDown').style.display = 'block';
                 document.getElementById('formInpu').style.display = 'contents';
+            } 
+            else if(document.getElementById('noCheck').checked) {
+                document.getElementById('formInpu').style.display = 'none';
+                document.getElementById('formInpu').style.display = 'block';
+                document.getElementById('dropDown').style.display = 'contents';
            }
         }
     </script>
