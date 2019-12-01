@@ -1,24 +1,35 @@
 <html>
 <head>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script>
+        function yesnoCheck() {
+            if (document.getElementById('yesCheck').checked) {
+                document.getElementById('formInpu').style.display = 'none';
+            } 
+            else if(document.getElementById('noCheck').checked) {
+                document.getElementById('redhat1').style.display = 'none';
+           }
+        }
+    </script>
+}
     <meta charset="utf-8">
-    <title>JS Bin</title>
+    <title>inkml Parser</title>
 </head>
 <body>
     <div id="wrapper">
         <label for="yes_no_radio">Do you want to enter a file?</label>
         <p>
-            <input type="radio" name="yes_no" checked>Yes</input>
+            <input type="radio" onclick="javascript:yesnoCheck();" name="yes_no" id="yesCheck" checked>Yes</input>
         </p>
         <p>
-            <input type="radio" name="yes_no">No</input>
+            <input type="radio" onclick="javascript:yesnoCheck();" name="yes_no" id="noCheck">No</input>
         </p>
     </div>
 
-    <form onsubmit="return validation(this);">  
+    <form onsubmit="return validation(this);" id="formInpu">  
         File: <input type="file" name="input" /><br />
         <input type="submit" value="Submit" />
     </form>
-      <script type="text/javascript" src='CheckFileType.js'> </script>
+    <script type="text/javascript" src='CheckFileType.js'> </script>
 </body>
 </html>
