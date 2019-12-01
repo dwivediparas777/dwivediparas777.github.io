@@ -22,23 +22,25 @@
 </head>
 <body>
     <div>
-    <div id="wrapper">
-        <label for="yes_no_radio">Do you want to enter a file?</label>
-        <p>
-            <input type="radio" onclick="javascript:yesnoCheck();" name="yes_no" id="yesCheck" checked>Yes</input>
-        </p>
-        <p>
-            <input type="radio" onclick="javascript:yesnoCheck();" name="yes_no" id="noCheck">No</input>
-        </p>
+        <div id="wrapper">
+            <label for="yes_no_radio">Do you want to enter a file?</label>
+            <p>
+                <input type="radio" onclick="javascript:yesnoCheck();" name="yes_no" id="yesCheck" checked>Yes</input>
+            </p>
+            <p>
+                <input type="radio" onclick="javascript:yesnoCheck();" name="yes_no" id="noCheck">No</input>
+            </p>
+        </div>
+        <div>
+            <select id="dropDown">
+                Select a file name:<br>
+                <option id="f1e1"> f1e1 </option>
+                <option id="f1e16"> f1e16 </option>
+                <option id="f1e31"> f1e31 </option>
+                <option id="f1e41"> f1e41 </option>
+            </select>
+        </div>
     </div>
-    <select id="dropDown">
-        Select a file name:<br>
-        <option id="f1e1"> f1e1 </option>
-        <option id="f1e16"> f1e16 </option>
-        <option id="f1e31"> f1e31 </option>
-        <option id="f1e41"> f1e41 </option>
-    </select>
-</div>
     <form onsubmit="return validation(this);" id="formInpu">  
         File: <input type="file" name="input" /><br />
         <input type="submit" value="Submit" />
