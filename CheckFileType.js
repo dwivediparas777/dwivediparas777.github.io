@@ -15,7 +15,7 @@ function validation(fileNames){
                     }
                 }
                 if (!blnValid) {
-                    alert("Sorry, " + fileName + " is invalid, allowed extensions are: " + _acceptableExtension.join(", "));
+                    alert("Sorry, " + fileName + " is invalid, allowed extension is: " + _acceptableExtension.join(", "));
                     return false;
                 }
             }
