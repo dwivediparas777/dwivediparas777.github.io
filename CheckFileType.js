@@ -26,10 +26,10 @@ function validation(fileNames){
     }
 }
 function readFileContent(fileName) {
-	const reader = new FileReader()
-  return new Promise((resolve, reject) => {
-    reader.onload = event => resolve(event.target.result)
-    reader.onerror = error => reject(error)
-    reader.readAsText(fileName)
-  })
+	const reader = new FileReader();
+	return new Promise((resolve, reject) => {
+	    reader.onload = event => resolve(event.target.result)
+	    reader.onerror = error => reject(error)
+	    reader.readAsText(fileName)
+	});
 }
