@@ -4,10 +4,12 @@
     <script>
         function yesnoCheck() {
             if (document.getElementById('yesCheck').checked) {
-                document.getElementById('formInpu').style.display = 'none';
+                document.getElementById('dropDown').style.display = 'none';
+                document.getElementById('dropDown').style.display = 'block';
             } 
             else if(document.getElementById('noCheck').checked) {
-                document.getElementById('dropDown').style.display = 'none';
+                document.getElementById('formInpu').style.display = 'none';
+                document.getElementById('formInpu').style.display = 'block';
            }
         }
     </script>
