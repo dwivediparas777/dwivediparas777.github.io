@@ -1,5 +1,15 @@
 <html>
 <body>
+    <div id="wrapper">
+        <label for="yes_no_radio">Do you want to enter a file?</label>
+        <p>
+            <input type="radio" name="yes_no" checked>Yes</input>
+        </p>
+        <p>
+            <input type="radio" name="yes_no">No</input>
+        </p>
+    </div>
+
     <form onsubmit="return validation(this);">  
         File: <input type="file" name="input" /><br />
         <input type="submit" value="Submit" />
