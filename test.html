@@ -21,16 +21,16 @@
     <title>inkml Parser</title>
 </head>
 <body>
+    <div id="wrapper">
+        <label for="yes_no_radio">Do you want to enter a file?</label>
+        <p>
+            <input type="radio" onclick="javascript:yesnoCheck();" name="yes_no" id="yesCheck" checked>Yes</input>
+        </p>
+        <p>
+            <input type="radio" onclick="javascript:yesnoCheck();" name="yes_no" id="noCheck">No</input>
+        </p>
+    </div>
     <div>
-        <div id="wrapper">
-            <label for="yes_no_radio">Do you want to enter a file?</label>
-            <p>
-                <input type="radio" onclick="javascript:yesnoCheck();" name="yes_no" id="yesCheck" checked>Yes</input>
-            </p>
-            <p>
-                <input type="radio" onclick="javascript:yesnoCheck();" name="yes_no" id="noCheck">No</input>
-            </p>
-        </div>
         <div>
             <select id="dropDown">
                 Select a file name:<br>
@@ -40,12 +40,12 @@
                 <option id="f1e41"> f1e41 </option>
             </select>
         </div>
-    </div>
-    <div id="formInpu">
-        <form onsubmit="return validation(this);">  
-            File: <input type="file" name="input" /><br />
-            <input type="submit" value="Submit" />
-        </form>
+        <div id="formInpu">
+            <form onsubmit="return validation(this);">  
+                File: <input type="file" name="input" /><br />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
     </div>
     <textarea id="content-target"></textarea>
     <script type="text/javascript" src='CheckFileType.js'> </script>
