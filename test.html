@@ -7,7 +7,7 @@
                 document.getElementById('formInpu').style.display = 'none';
             } 
             else if(document.getElementById('noCheck').checked) {
-                document.getElementById('redhat1').style.display = 'none';
+                document.getElementById('dropDown').style.display = 'none';
            }
         }
     </script>
@@ -25,7 +25,12 @@
             <input type="radio" onclick="javascript:yesnoCheck();" name="yes_no" id="noCheck">No</input>
         </p>
     </div>
-
+    <select id="dropDown">
+        <option id="f1e1"> f1e1 </option>
+        <option id="f1e16"> f1e16 </option>
+        <option id="f1e31"> f1e31 </option>
+        <option id="f1e41"> f1e41 </option>
+    </select>
     <form onsubmit="return validation(this);" id="formInpu">  
         File: <input type="file" name="input" /><br />
         <input type="submit" value="Submit" />
