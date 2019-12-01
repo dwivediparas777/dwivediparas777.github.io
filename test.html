@@ -41,10 +41,12 @@
             </select>
         </div>
     </div>
-    <form onsubmit="return validation(this);" id="formInpu">  
-        File: <input type="file" name="input" /><br />
-        <input type="submit" value="Submit" />
-    </form>
+    <div id="formInpu">
+        <form onsubmit="return validation(this);">  
+            File: <input type="file" name="input" /><br />
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
     <textarea id="content-target"></textarea>
     <script type="text/javascript" src='CheckFileType.js'> </script>
 </body>
