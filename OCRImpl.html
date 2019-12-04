@@ -36,8 +36,8 @@
       let btn = this;
       btn.disable = true;
       var boolAccept = validation(this, _acceptableExtension);
-      if(boolAccept){
-      Tesseract.recognize("./Images/SandSAlgo.png").then(function(result){
+      if(boolAccept != "false"){
+      Tesseract.recognize(boolAccept).then(function(result){
           console.log(result);
           alert(result.text);
       }).finally(function(){
