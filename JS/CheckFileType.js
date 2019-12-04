@@ -1,5 +1,5 @@
-var _acceptableExtension = [".inkml"];
-function validation(fileNames){
+
+function validation(fileNames, _acceptableExtension){
     var arrInput = fileNames.getElementsByTagName("input");
     for(var i=0; i<arrInput.length; i++){
         var inputData = arrInput[i];
@@ -21,5 +21,6 @@ function validation(fileNames){
             }
         }
     }
+    return true;
 }
 
