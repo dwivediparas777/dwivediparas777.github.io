@@ -29,6 +29,8 @@
     <textarea id="content-target"></textarea>
     <script>
       var _acceptableExtension = [".png", ".jpeg", ".jpg"];
+      console.log(_acceptableExtension);
+      console.log(this);
       var boolAccept = validation(this, _acceptableExtension);
       window.Tesseract = Tesseract.create();
       document.getElementById("img-to-txt").addEventListener("click", function(){
