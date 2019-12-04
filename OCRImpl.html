@@ -12,12 +12,24 @@
   <body>
     <!-- Load Script for tesseract.js -->
     <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
-    <div id="content">
-      <button id="img-to-txt">
-              Convert image to text
-      </button>
-    </div>    
+    <!-- Load Script for CheckFileType.js -->
+    <script type="text/javascript" src='./JS/CheckFileType.js'> </script>
+    <!-- Form to take input image from user and convert to text-->
+    <form method="post" enctype="multipart/form-data">
+       <div>
+         <label for="file">Choose file to upload</label>
+         <input type="file" id="file" name="file" multiple>
+       </div>
+       <div id="content">
+          <button id="img-to-txt">
+                  Convert image to text
+          </button>
+       </div>    
+    </form>
+    <textarea id="content-target"></textarea>
     <script>
+      var _acceptableExtension = [".png", ".jpeg", ".jpg"];
+      var boolAccept = validation(this, _acceptableExtension);
       window.Tesseract = Tesseract.create();
       document.getElementById("img-to-txt").addEventListener("click", function(){
       let btn = this;
