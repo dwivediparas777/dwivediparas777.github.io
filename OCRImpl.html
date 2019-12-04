@@ -37,15 +37,13 @@
       btn.disable = true;
       var boolAccept = validation(this, _acceptableExtension);
       if boolAccept{
-      Tesseract.recognize("./Images/SandSAlgo.png",{
-        tessedit_char_blacklist:'e'}).then(function(result){
+      Tesseract.recognize("./Images/SandSAlgo.png").then(function(result){
           console.log(result);
           alert(result.text);
       }).finally(function(){
               btn.disable = false;
               });
-      }
-      }, false);
+      }}, false);
    </script>
   
   </body>
