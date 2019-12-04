@@ -31,11 +31,12 @@
       var _acceptableExtension = [".png", ".jpeg", ".jpg"];
       console.log(_acceptableExtension);
       console.log(this);
-      var boolAccept = validation(this, _acceptableExtension);
       window.Tesseract = Tesseract.create();
       document.getElementById("img-to-txt").addEventListener("click", function(){
       let btn = this;
       btn.disable = true;
+      var boolAccept = validation(this, _acceptableExtension);
+      if boolAccept{
       Tesseract.recognize("./Images/SandSAlgo.png",{
         tessedit_char_blacklist:'e'}).then(function(result){
           console.log(result);
@@ -43,6 +44,7 @@
       }).finally(function(){
               btn.disable = false;
               });
+      }
       }, false);
    </script>
   
