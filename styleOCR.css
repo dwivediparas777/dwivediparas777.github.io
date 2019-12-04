@@ -2,6 +2,20 @@
     max-width: 1000px;
     margin: auto;
     left: 40%;
-    right: 1%;
+    height: 10%;
+    position: absolute;
+}
+#content-button{
+    max-width: 1000px;
+    margin: auto;
+    left: 40%;
+    height: 25%;
+    position: absolute;
+}
+#content-textarea{
+    max-width: 1000px;
+    margin: auto;
+    left: 40%;
+    height: 40%;
     position: absolute;
 }
