@@ -1,7 +1,8 @@
 #content {
     max-width: 1000px;
     margin: auto;
-    left: 1%;
+    left: 40%;
     right: 1%;
+    down: 10;
     position: absolute;
 }
