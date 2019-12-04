@@ -4,6 +4,7 @@
     left: 35%;
     top: 5%;
     position: absolute;
+    display: inline-block;
 }
 #content-button{
     max-width: 1000px;
@@ -11,6 +12,7 @@
     left: 40%;
     top: 15%;
     position: absolute;
+    display: inline-block;
 }
 #content-textarea{
     max-width: 1000px;
@@ -18,4 +20,5 @@
     left: 35%;
     top: 25%;
     position: absolute;
+    display: inline-block;
 }
