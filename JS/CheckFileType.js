@@ -16,11 +16,11 @@ function validation(fileNames, _acceptableExtension){
                 }
                 if (!blnValid) {
                     alert("Sorry, " + fileName + " is invalid, allowed extension is: " + _acceptableExtension.join(", "));
-                    return false;
+                    return "false";
                 }
             }
         }
     }
-    return true;
+    return fileName;
 }
 
