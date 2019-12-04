@@ -1,7 +1,7 @@
 #content {
     max-width: 1000px;
     margin: auto;
-    left: 25%;
+    left: 35%;
     top: 10%;
     position: absolute;
 }
@@ -9,13 +9,13 @@
     max-width: 1000px;
     margin: auto;
     left: 40%;
-    top: 35%;
+    top: 20%;
     position: absolute;
 }
 #content-textarea{
     max-width: 5000px;
     margin: auto;
-    left: 25%;
-    top: 50%;
+    left: 35%;
+    top: 35%;
     position: absolute;
 }
