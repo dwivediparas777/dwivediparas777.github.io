@@ -22,7 +22,7 @@
       document.getElementById("img-to-txt").addEventListener("click", function(){
       let btn = this;
       btn.disable = true;
-      Tesseract.recognize("./Iages/SandSAlgo.png").then(function(result){
+      Tesseract.recognize("./Images/SandSAlgo.png").then(function(result){
           console.log(result);
           alert(result.text);
       }).finally(function(){
