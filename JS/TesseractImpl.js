@@ -1,3 +1,5 @@
 function doFileTesseract(data){
-    console.log(data);
+    Tesseract.recognize(data).then(function(result){
+        alert(result.text);
+    });
 }
