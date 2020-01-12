@@ -1,5 +1,5 @@
 function doFileTesseract(data){
     Tesseract.recognize(data).then(function(result){
-        alert(result.text);
+        document.getElementById("textareaOCR").value=result.text;
     });
 }
