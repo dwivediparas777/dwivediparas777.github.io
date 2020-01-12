@@ -6,6 +6,8 @@
     <title>CAM OCR</title>
 </head>
 <body>
+    <!-- Load Script for tesseract.js -->
+    <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
     <!-- Load Script for TesseractImpl.js -->
     <script type="text/javascript" src='./JS/TesseractImpl.js'> </script>
     
@@ -13,7 +15,7 @@
     <input type="file" accept="image/*" capture  id="image-from-user">
     <script>
         const fileInput = document.getElementById("image-from-user");
-        fileInput.addEventListener('change', (e) => doFileTesseract(e.target.files));
+        fileInput.addEventListener('change', (e) => doFileTesseract(e.target.files[0]));
     </script>
 </body>
 </html>
