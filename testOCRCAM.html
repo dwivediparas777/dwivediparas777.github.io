@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <title>CAM OCR</title>
+</head>
+<body>
+    <!-- Load Script for TesseractImpl.js -->
+    <script type="text/javascript" src='./JS/TesseractImpl.js'> </script>
+    
+    <!-- Take image as input -->
+    <input type="file" accept="image/*" capture  id="image-from-user">
+    <script>
+        const fileInput = document.getElementById("image-from-user");
+        fileInput.addEventListener('change', (e) => doFileTesseract(e.target.files));
+    </script>
+</body>
+</html>
