@@ -34,16 +34,17 @@
       document.getElementById("img-to-txt").addEventListener("click", function(){
         let btn = this;
         btn.disable = true;
-        var boolAccept = validation(this, _acceptableExtension);
+        var boolAccept = true;
+        window.Tesseract = Tesseract.create();
+        //validation(this, _acceptableExtension);
         console.log("boolAccept : ", boolAccept);
         if(boolAccept != "false"){
-          //window.Tesseract = Tesseract.loadImage(this);
-          //Tesseract.recognize(boolAccept).then(function(result){
-          //    console.log(result);
-          //    alert(result.text);
-          //}).finally(function(){
-          //        btn.disable = false;
-          //        });
+          Tesseract.recognize(boolAccept).then(function(result){
+              console.log(result);
+              alert(result.text);
+          }).finally(function(){
+                  btn.disable = false;
+                  });
         }}, false);
    </script>
   
