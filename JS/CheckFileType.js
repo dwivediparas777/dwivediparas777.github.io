@@ -1,7 +1,7 @@
 
 function validation(fileNames, _acceptableExtension){
     var arrInput = fileNames.getElementsByTagName("input");
-    alert("test validation");
+    alert("test validation at js");
     console.log("fileNames", fileNames);
     for(var i=0; i<arrInput.length; i++){
         var inputData = arrInput[i];
