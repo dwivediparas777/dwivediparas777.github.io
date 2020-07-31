@@ -29,13 +29,13 @@
     <textarea id="content-textarea" rows="20" cols="50"></textarea>
     <script>
       var _acceptableExtension = [".png", ".jpeg", ".jpg"];
-      console.log(_acceptableExtension);
-      console.log(this);
+      console.log("_acceptableExtension : ", _acceptableExtension);
+      console.log("this : ", this);
       document.getElementById("img-to-txt").addEventListener("click", function(){
         let btn = this;
         btn.disable = true;
         var boolAccept = validation(this, _acceptableExtension);
-        alert(boolAccept);
+        console.log("boolAccept : ", boolAccept);
         if(boolAccept != "false"){
             window.Tesseract = Tesseract.loadImage(this);
           //Tesseract.recognize(boolAccept).then(function(result){
