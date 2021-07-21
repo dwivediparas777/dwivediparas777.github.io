@@ -1,49 +1,8 @@
 <html>
-<head>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script>
-        function yesnoCheck() {
-            if (document.getElementById('yesCheck').checked) {
-                document.getElementById('dropDown').style.display = 'none';
-                document.getElementById('formInpu').style.display = 'block';
-            } 
-            else if(document.getElementById('noCheck').checked) {
-                document.getElementById('formInpu').style.display = 'none';
-                document.getElementById('dropDown').style.display = 'block';
-           }
-        }
-    </script>
-    <meta charset="utf-8">
-    <title>inkml Parser</title>
-</head>
-<body>
-    <div id="wrapper">
-        <label for="yes_no_radio">Do you want to enter a file?</label>
-        <p>
-            <input type="radio" onclick="javascript:yesnoCheck();" name="yes_no" id="yesCheck" checked>Yes</input>
-        </p>
-        <p>
-            <input type="radio" onclick="javascript:yesnoCheck();" name="yes_no" id="noCheck">No</input>
-        </p>
-    </div>
-    <div>
-        <div id="dropDown" style="display:none">
-            Select a file name:<br>
-            <select>
-                <option id="f1e1"> f1e1 </option>
-                <option id="f1e16"> f1e16 </option>
-                <option id="f1e31"> f1e31 </option>
-                <option id="f1e41"> f1e41 </option>
-            </select>
-        </div>
-        <div id="formInpu">
-            <form onsubmit="return validation(this);">  
-                File: <input type="file" name="input" /><br />
-                <input type="submit" value="Submit" />
-            </form>
-        </div>
-    </div>
-    <textarea id="content-target"></textarea>
-    <script type="text/javascript" src='./JS/CheckFileType.js'> </script>
-</body>
+    <head>
+        <title>Restructuring code</title>
+    </head>
+    <body>
+        <b>Restructuring code</b>
+    </body>
 </html>
