@@ -1,0 +1,25 @@
+.allColor{
+    color: green;
+    background-color: rgb(48, 48, 48);
+}
+
+.basicInfo{
+    width: 25%;
+    float: right;
+}
+
+.summary{
+    float: left;
+    width: 65%;
+}
+
+.inputBox{
+    background: transparent;
+    color: green;
+    border: gray;
+}
+
+.mainDiv{
+    margin-left: 3%;
+
+}
