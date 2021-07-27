@@ -29,7 +29,15 @@ function trigger_get_awards(){
 }
 
 function trigger_get_skills(){
-    return get_default_message();
+    var message = document.createElement("div");
+    message.style = "margin-left:55px";
+    message.innerHTML = "Below are my primary skills:<ul>";
+    var skills = ["Python", "C++", "Angular - Typescript", "Structured Query Language", "Django rest framework", "PostgreSQL", "Machine Learning", "Gitlab"];
+    for(var i in skills) {
+        message.innerHTML += "<li>" + skills[i] + "</li>";
+    }
+    message.innerHTML += "</ul><br>";
+    return message;
 }
 
 function trigger_help(){
@@ -129,7 +137,10 @@ function readTextFile(file, callback) {
 function increaseVisitCount(){
     readTextFile("data/views.json", function(text){
         var data = JSON.parse(text);
-        console.log("increaseVisitCount : ", data);
+        data['views'] += 1;
+        console.log("increaseVisitCount : ", data["views"]);
+        document.getElementById('userVisitCount').innerText = "User visit count: " + data["views"];
+        document.getElementById('userVisitCount').innerHTML = data["views"];
     });
 
 }
