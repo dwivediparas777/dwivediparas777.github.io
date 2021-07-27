@@ -132,6 +132,9 @@ function increaseVisitCount(file) {
             data['views'] += 1;
             console.log("increaseVisitCount : ", data["views"]);
             document.getElementById('userVisitCount').innerHTML = "User visit count: " + data["views"];
+
+            rawFile.open("POST", file);
+            rawFile.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             rawFile.send(JSON.stringify(data));
         }
     }
