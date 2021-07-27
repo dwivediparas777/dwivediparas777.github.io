@@ -123,22 +123,10 @@ document.addEventListener("keyup", function(event) {
 
 // Code to update visit count
 function increaseVisitCount(file) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("application/json");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            var data = JSON.parse(rawFile.responseText);
-            data['views'] += 1;
-            console.log("increaseVisitCount : ", data["views"]);
-            document.getElementById('userVisitCount').innerHTML = "User visit count: " + data["views"];
-
-            rawFile.open("POST", file);
-            rawFile.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            rawFile.send(JSON.stringify(data));
-        }
-    }
-    rawFile.send(null);
+    $.getJSON(file, function( data ) {
+        data['views'] += 1;
+        document.getElementById('userVisitCount').innerHTML = "User visit count: " + data["views"];                  
+      });
 }
 
 window.onload = increaseVisitCount("data/views.json");
