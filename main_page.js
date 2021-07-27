@@ -122,27 +122,20 @@ document.addEventListener("keyup", function(event) {
 
 
 // Code to update visit count
-function readTextFile(file, callback) {
+function increaseVisitCount(file) {
     var rawFile = new XMLHttpRequest();
     rawFile.overrideMimeType("application/json");
     rawFile.open("GET", file, true);
     rawFile.onreadystatechange = function() {
         if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
+            var data = JSON.parse(rawFile.responseText);
+            data['views'] += 1;
+            console.log("increaseVisitCount : ", data["views"]);
+            document.getElementById('userVisitCount').innerHTML = "User visit count: " + data["views"];
+            rawFile.send(JSON.stringify(data));
         }
     }
     rawFile.send(null);
 }
 
-function increaseVisitCount(){
-    readTextFile("data/views.json", function(text){
-        var data = JSON.parse(text);
-        data['views'] += 1;
-        console.log("increaseVisitCount : ", data["views"]);
-        document.getElementById('userVisitCount').innerText = "User visit count: " + data["views"];
-        document.getElementById('userVisitCount').innerHTML = data["views"];
-    });
-
-}
-
-window.onload = increaseVisitCount();
+window.onload = increaseVisitCount("data/views.json");
