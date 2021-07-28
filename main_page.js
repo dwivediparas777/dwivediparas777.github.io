@@ -33,7 +33,18 @@ function trigger_get_languages(){
 }
 
 function trigger_get_awards(){
-    return get_default_message();
+    var awards = {"Star of the Quarter Award" : "For development of product from scratch",
+                  "On The Spot Award" : "7 times. For quick and on-time resolutions of technical issues",
+                  "Best Team Award" : "For clearing IPSafe in recorded time of two week",
+                  "Special Initiative Award" : "For developing patentable statistical model to be used by different product"};
+    var message = document.createElement("div");
+    message.style = "margin-left:55px";
+    message.innerHTML = "Awards received<ul>";
+    for (const [key, value] of Object.entries(awards)) {
+        message.innerHTML += "<li><b>" + key + "</b> : " + value + "</li>";
+    }
+    message.innerHTML += "</ul><br>";
+    return message;
 }
 
 function trigger_get_skills(){
@@ -53,7 +64,7 @@ function trigger_help(){
     message.style = "margin-left:55px";
     message.innerHTML = "Please choose from below queries<ul>";
     for (const [key, value] of Object.entries(events)) {
-        message.innerHTML += "<li>" + key + " : " + value[1] + "</li>";
+        message.innerHTML += "<li><b>" + key + "</b> : " + value[1] + "</li>";
     }
     message.innerHTML += "</ul><br>";
     return message;
