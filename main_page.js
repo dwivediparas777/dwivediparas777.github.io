@@ -21,7 +21,15 @@ function trigger_get_experience(){
 }
 
 function trigger_get_languages(){
-    return get_default_message();
+    var message = document.createElement("div");
+    message.style = "margin-left:55px";
+    message.innerHTML = "Language Detail:<ul>";
+    var skills = ["English", "Hindi"];
+    for(var i in skills) {
+        message.innerHTML += "<li>" + skills[i] + "</li>";
+    }
+    message.innerHTML += "</ul><br>";
+    return message;
 }
 
 function trigger_get_awards(){
@@ -32,7 +40,7 @@ function trigger_get_skills(){
     var message = document.createElement("div");
     message.style = "margin-left:55px";
     message.innerHTML = "Below are my primary skills:<ul>";
-    var skills = ["Python", "C++", "Angular - Typescript", "Structured Query Language", "Django rest framework", "PostgreSQL", "Machine Learning", "Gitlab"];
+    var skills = ["Python", "Django rest framework", "Structured Query Language",  "PostgreSQL", "C++", "Angular - Typescript", "Machine Learning", "Gitlab"];
     for(var i in skills) {
         message.innerHTML += "<li>" + skills[i] + "</li>";
     }
@@ -125,7 +133,14 @@ document.addEventListener("keyup", function(event) {
 function increaseVisitCount(file) {
     $.getJSON(file, function( data ) {
         data['views'] += 1;
-        document.getElementById('userVisitCount').innerHTML = "User visit count: " + data["views"];                  
+        console.log("increaseVisitCount : ", data);
+        //document.getElementById('userVisitCount').innerHTML = "User visit count: " + data["views"];                  
+        var newData = JSON.stringify(data);
+        jQuery.post(file, {
+            newData: newData
+        }, function(response){
+            // response could contain the url of the newly saved file
+        })
       });
 }
 
