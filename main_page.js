@@ -13,7 +13,19 @@ function get_default_message(){
 }
 
 function trigger_get_education(){
-    return get_default_message();
+    graduation = {"College" : "Gurukul Kangri Vishwavidyalaya, Uttarakhand",
+                "Degree" : "Bachelor of Engineering and Technology",
+                "Major" : "Computer Science Engineering",
+                "From_to" : "April 2012 - March 2016",
+                "Accomplishment" : "Acquired First position in third semester of graduation"};
+    var message = document.createElement("div");
+    message.style = "margin-left:55px";
+    message.innerHTML = "Education detail:<ul>";
+    for (const [key, value] of Object.entries(graduation)) {
+        message.innerHTML += "<li><b>" + key + "</b> : " + value + "</li>";
+    }
+    message.innerHTML += "</ul><br>";
+    return message;            
 }
 
 function trigger_get_experience(){
