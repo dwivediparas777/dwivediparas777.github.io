@@ -192,17 +192,14 @@ document.addEventListener("keyup", function(event) {
 
 // Code to update visit count
 function increaseVisitCount(file) {
-    $.getJSON(file, function( data ) {
-        data['views'] += 1;
-        console.log("increaseVisitCount : ", data);
-        //document.getElementById('userVisitCount').innerHTML = "User visit count: " + data["views"];                  
-        var newData = JSON.stringify(data);
-        jQuery.post(file, {
-            newData: newData
-        }, function(response){
-            // response could contain the url of the newly saved file
-        })
-      });
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.countapi.xyz/hit/pdwivedi_views/visits/");
+    xhr.responseType = "json";
+    xhr.onload = function() {
+        document.getElementById('userVisitCount').innerHTML = "User visit count: " + this.response.value;
+    }
+    xhr.send();
+                      
 }
 
 window.onload = increaseVisitCount("data/views.json");
