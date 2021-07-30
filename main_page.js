@@ -185,21 +185,31 @@ document.addEventListener("keyup", function(event) {
             document.getElementById("helpButton").disabled = false;
             trigger_event(query);
             document.getElementById("helpButton_0").focus();
+            increaseQueryCount();            
         }
     }
 });
 
+// Code to update queries count
+function increaseQueryCount() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.countapi.xyz/hit/pdwivedi_views/queries/");
+    xhr.responseType = "json";
+    xhr.onload = function() {
+        document.getElementById('totalQueries').innerHTML = "Queries count: " + this.response.value;
+    }
+    xhr.send();                     
+}
 
 // Code to update visit count
-function increaseVisitCount(file) {
+function increaseVisitCount() {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "https://api.countapi.xyz/hit/pdwivedi_views/visits/");
     xhr.responseType = "json";
     xhr.onload = function() {
         document.getElementById('userVisitCount').innerHTML = "User visit count: " + this.response.value;
     }
-    xhr.send();
-                      
+    xhr.send();                      
 }
 
-window.onload = increaseVisitCount("data/views.json");
+window.onload = increaseVisitCount();
