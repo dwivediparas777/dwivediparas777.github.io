@@ -209,7 +209,8 @@ function increaseVisitCount() {
     xhr.onload = function() {
         document.getElementById('userVisitCount').innerHTML = "User visit count: " + this.response.value;
     }
-    xhr.send();                      
+    xhr.send();            
+    increaseQueryCount();          
 }
 
 window.onload = increaseVisitCount();
