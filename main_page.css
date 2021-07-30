@@ -1,5 +1,5 @@
 .allColor{
-    color: green;
+    color: rgb(235, 235, 235);
     background-color: rgb(15, 15, 15);
     font-size: 17px;
 }
@@ -16,7 +16,7 @@
 
 .inputBox{
     background: transparent;
-    color: green;
+    color: rgb(235, 235, 235);
     border: gray;
     width: 75%;
 }
