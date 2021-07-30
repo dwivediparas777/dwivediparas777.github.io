@@ -29,7 +29,45 @@ function trigger_get_education(){
 }
 
 function trigger_get_experience(){
-    return get_default_message();
+
+    var experience = [{"Company":"TCS, Mumbai",
+    "Role": "Software Developer",
+    "From To" : "Jan 2020 - PRESENT",
+    "Responsiblity" : ["Developed algorithm to statistically identify domain for dataset.",
+                        "Designed and implemented multi-role architecture to enable secure api usage.",
+                        "Implemented multi-tenancy feature which resulted in the increase of product revenue by 15%.",
+                        "Increased server query response time by 25% by restructuring API.",
+                        "Client engagement to enable product admin’s with the product understanding."]},
+    {"Company":"TCS, Noida",
+    "Role": "Python Developer",
+    "From To" : "Aug 2016 - Dec 2019",
+    "Responsiblity" : ["Automation of customers manual paper procedure, which reduced annual cost by 10% and reduced processing time by 70%.",
+                        "Implemented the Proof of Concept on customer satisfaction prediction based on customer care call data",
+                        "Work with customers and account teams to identify success metrics to quantitatively measure PoC success", 
+                        "Worked along with stakeholders to gather the requirement and tweaking of the product on client review"]}]
+
+    var message = document.createElement("div");
+    message.style = "margin-left:55px";
+    message.innerHTML = "Experience detail:<ul>";
+    for(var i in experience){
+        message.innerHTML += "<ol>";
+        for (const [key, value] of Object.entries(experience[i])) {
+            if(key == "Responsiblity"){
+                message.innerHTML += "<li><b>" + key + "</b> : <ul>";
+                for(var j in value){
+                    message.innerHTML += '<li style="margin-left:30px">' + value[j] + "</li>";
+                }
+                message.innerHTML += "</ul></li>"
+            }
+            else{
+                message.innerHTML += "<li><b>" + key + "</b> : " + value + "</li>";
+            }
+        }
+        message.innerHTML += "</ol>"
+    }
+    message.innerHTML += "</ul><br>";
+    return message;
+
 }
 
 function trigger_get_languages(){
