@@ -196,7 +196,7 @@ function increaseQueryCount() {
     xhr.open("GET", "https://api.countapi.xyz/hit/pdwivedi_views/queries/");
     xhr.responseType = "json";
     xhr.onload = function() {
-        document.getElementById('totalQueries').innerHTML = "Queries count: " + this.response.value;
+        document.getElementById('totalQueries').innerHTML = "Total Queries : " + this.response.value;
     }
     xhr.send();                     
 }
@@ -207,7 +207,7 @@ function increaseVisitCount() {
     xhr.open("GET", "https://api.countapi.xyz/hit/pdwivedi_views/visits/");
     xhr.responseType = "json";
     xhr.onload = function() {
-        document.getElementById('userVisitCount').innerHTML = "User visit count: " + this.response.value;
+        document.getElementById('userVisitCount').innerHTML = "Portfolio Visits : " + this.response.value;
     }
     xhr.send();            
     increaseQueryCount();          
