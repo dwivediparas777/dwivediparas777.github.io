@@ -101,7 +101,7 @@ function trigger_get_skills(){
     var message = document.createElement("div");
     message.style = "margin-left:55px";
     message.innerHTML = "Below are my primary skills:<ul>";
-    var skills = ["Python", "Django rest framework", "Structured Query Language",  "PostgreSQL", "C++", "Angular - Typescript", "Natural Language Processing (NLP)", "Gitlab"];
+    var skills = ["Python", "Django rest framework", "Structured Query Language (SQL)",  "PostgreSQL", "C++", "Angular - Typescript", "Natural Language Processing (NLP)", "Gitlab"];
     for(var i in skills) {
         message.innerHTML += "<li>" + skills[i] + "</li>";
     }
