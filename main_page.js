@@ -185,32 +185,23 @@ document.addEventListener("keyup", function(event) {
             document.getElementById("helpButton").disabled = false;
             trigger_event(query);
             document.getElementById("helpButton_0").focus();
-            increaseQueryCount();            
+            increaseQueryCount("hit", "queries", "totalQueries", "Total Queries : ");          
         }
     }
 });
 
-// Code to update queries count
-function increaseQueryCount() {
+// Code to update count
+function increaseQueryCount(requestType, url, tag, message) {
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://api.countapi.xyz/hit/pdwivedi_views/queries/");
+    xhr.open("GET", "https://api.countapi.xyz/" + requestType + "/pdwivedi_views/" + url + "/");
     xhr.responseType = "json";
     xhr.onload = function() {
-        document.getElementById('totalQueries').innerHTML = "Total Queries : " + this.response.value;
+        document.getElementById(tag).innerHTML = message + this.response.value;
     }
-    xhr.send();                     
+    xhr.send();
+    if(tag === "userVisitCount"){
+        increaseQueryCount("get", "queries", "totalQueries", "Total Queries : ");
+    }
 }
 
-// Code to update visit count
-function increaseVisitCount() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://api.countapi.xyz/hit/pdwivedi_views/visits/");
-    xhr.responseType = "json";
-    xhr.onload = function() {
-        document.getElementById('userVisitCount').innerHTML = "Portfolio Visits : " + this.response.value;
-    }
-    xhr.send();            
-    increaseQueryCount();          
-}
-
-window.onload = increaseVisitCount();
+window.onload = increaseQueryCount("hit", "visits", "userVisitCount", "Portfolio Visits : ");
