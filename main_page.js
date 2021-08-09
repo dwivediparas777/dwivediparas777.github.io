@@ -4,12 +4,17 @@ var events = {"help": [trigger_help, "Shows available list of comands"],
                 "awards": [trigger_get_awards, "Awards received and there details"],
                 "languages": [trigger_get_languages, "List of languages and fluency"],
                 "education": [trigger_get_education, "My education detail"],
-                "experience": [trigger_get_experience, "Shows experience"]};
+                "experience": [trigger_get_experience, "Shows experience"],
+                "clear": [trigger_clear, "Clear the CLI"]};
 
 function get_default_message(){
     var message = document.createElement("h4");
     message.innerText = "Coming Soon...";
     return message;
+}
+
+function trigger_clear(){
+    document.getElementById('userContentBlock').innerHTML = "";
 }
 
 function trigger_get_education(){
@@ -159,19 +164,23 @@ function trigger_event(query){
     var message;
     query = query.toLowerCase();
 
-    if(query in events){
+    var entry = create_new_entry();
+    var div_block = document.createElement("div");
+    div_block.append(entry);
+
+    if(query in events && query!="clear"){
         message = events[query][0]();
+    }
+    else if(query==="clear"){
+        events[query][0]();
+        document.getElementById('userContentBlock').append(div_block);
+        return;
     }
     else{
         message = data_not_found();
     }
 
     document.getElementById('userContentBlock').append(message);    
-
-    var entry = create_new_entry();
-    var div_block = document.createElement("div");
-    div_block.append(entry);
-
     document.getElementById('userContentBlock').append(div_block);
 }
 
